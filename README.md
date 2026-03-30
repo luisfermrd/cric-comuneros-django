@@ -141,14 +141,15 @@ npm install
 npm test
 ```
 
-## Despliegue a Produccion (VPS con nginx existente)
+## Despliegue a Producción (VPS por IP Directa)
 
-Compatible con servidores que ya tienen nginx corriendo (ServerAvatar, RunCloud, etc). Los contenedores escuchan en `127.0.0.1` y el nginx del VPS hace reverse proxy.
+Este proyecto está configurado para desplegarse fácilmente en un servidor limpio usando IP. Los puertos `80` (Frontend) y `8000` (Backend API/Admin) se exponen automáticamente.
 
 ### 1. Configurar el servidor
 
 ```bash
-# Clonar el repo
+# Opcional (el despliegue automático de GitHub Actions hace esto por ti)
+# Pero si quieres levantar a mano:
 git clone https://github.com/luisfermrd/cric-comuneros-django.git /opt/cric-comuneros
 cd /opt/cric-comuneros
 
@@ -160,13 +161,11 @@ nano .env  # Editar con tus valores reales
 docker compose -f docker-compose.prod.yml up -d
 ```
 
-### 2. Configurar nginx del VPS
+### 2. Configurar la URL o IP en el `.env` (o Github Secrets)
 
-Crear un vhost en el nginx existente (ver `nginx/vhost-example.conf`):
-
-- `/*` → `http://127.0.0.1:8080` (frontend)
-- `/api/*` → `http://127.0.0.1:8000` (backend)
-- `/admin/*` → `http://127.0.0.1:8000` (Django admin)
+Para que Django permita las peticiones, debes asignarle tu IP pública a la variable `DOMAIN`.
+- **En tu `.env` de producción:** Pon `DOMAIN=tu.ip.publica`
+- **En GitHub Secrets (Opcional):** Puedes declarar el Repository Secret `DOMAIN=tu.ip.publica`.
 
 
 ### 3. Configurar GitHub Secrets para deploy automático

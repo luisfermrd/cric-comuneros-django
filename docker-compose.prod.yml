@@ -18,13 +18,13 @@ services:
     build: ./backend
     restart: always
     ports:
-      - "127.0.0.1:8000:8000"
+      - "8000:8000"
     environment:
       DATABASE_URL: postgres://${DB_USER:-postgres}:${DB_PASSWORD}@db:5432/${DB_NAME:-cric_comuneros}
       DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
       DEBUG: "false"
       ALLOWED_HOSTS: ${DOMAIN},localhost
-      CORS_ORIGINS: https://${DOMAIN}
+      CORS_ORIGINS: http://${DOMAIN}
     depends_on:
       db:
         condition: service_healthy
@@ -33,7 +33,7 @@ services:
     build: ./frontend
     restart: always
     ports:
-      - "127.0.0.1:8080:80"
+      - "80:80"
     depends_on:
       - backend
 
