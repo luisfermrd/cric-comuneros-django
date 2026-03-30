@@ -16,6 +16,22 @@ Sistema de gestion de comuneros del Consejo Regional Indigena del Cauca (CRIC), 
 
 > **Repositorio Oficial:** `https://github.com/luisfermrd/cric-comuneros-django.git`
 
+### ⚙️ Variables de Entorno (Opcional en Local)
+
+El proyecto viene configurado con valores por defecto para funcionar inmediatamente en tu máquina. **No necesitas crear un archivo `.env` para desarrollo local**, a menos que tus credenciales de PostgreSQL sean diferentes a las de por defecto (`Usuario: postgres`, `Contraseña: postgres`).
+
+Si necesitas cambiarlas, puedes crear un archivo `.env` en la carpeta `backend/` con el siguiente formato (puedes guiarte del archivo `.env.production.example` que está en la raíz del proyecto):
+
+```env
+DB_NAME=cric_comuneros
+DB_USER=mi_usuario
+DB_PASSWORD=mi_password
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+---
+
 ### Opción 1: Todo con Docker Compose (Recomendado)
 
 ```bash
