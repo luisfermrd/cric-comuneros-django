@@ -76,8 +76,21 @@ jobs:
           password: ${{ secrets.VPS_PASSWORD }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd ${{ vars.DEPLOY_PATH || '/opt/cric-comuneros' }}
+            DEPLOY_DIR=${{ vars.DEPLOY_PATH || '~/cric-comuneros' }}
+            if [ ! -d "$DEPLOY_DIR" ]; then
+              git clone https://github.com/luisfermrd/cric-comuneros-django.git $DEPLOY_DIR
+            fi
+            cd $DEPLOY_DIR
             git pull origin main
+            
+            if [ ! -f ".env" ]; then
+              echo "DOMAIN=${{ secrets.DOMAIN || 'localhost' }}" > .env
+              echo "DB_NAME=cric_comuneros" >> .env
+              echo "DB_USER=postgres" >> .env
+              echo "DB_PASSWORD=cric_secure_db_pass_2026" >> .env
+              echo "DJANGO_SECRET_KEY=cric_secure_django_secret_key_2026" >> .env
+            fi
+            
             docker compose -f docker-compose.prod.yml build
             docker compose -f docker-compose.prod.yml up -d
             docker compose -f docker-compose.prod.yml exec -T backend python manage.py migrate
