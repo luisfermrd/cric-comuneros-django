@@ -169,13 +169,14 @@ Crear un vhost en el nginx existente (ver `nginx/vhost-example.conf`):
 - `/admin/*` → `http://127.0.0.1:8000` (Django admin)
 
 
-### 3. Configurar GitHub Secrets para deploy automatico
+### 3. Configurar GitHub Secrets para deploy automático
 
 | Secret | Valor |
 |--------|-------|
 | `VPS_HOST` | IP o dominio del servidor |
-| `VPS_USER` | Usuario SSH (ej: `deploy`) |
-| `VPS_SSH_KEY` | Llave privada SSH |
+| `VPS_USER` | Usuario SSH (ej: `deploy` o `root`) |
+| `VPS_SSH_KEY` | Llave privada SSH **(Opción 1)** |
+| `VPS_PASSWORD` | Contraseña del usuario SSH **(Opción 2, usar si no tienes llave)** |
 
 | Variable | Valor |
 |----------|-------|
