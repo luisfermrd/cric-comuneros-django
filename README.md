@@ -14,34 +14,67 @@ Sistema de gestion de comuneros del Consejo Regional Indigena del Cauca (CRIC), 
 
 ## Levantar el Proyecto
 
-### Docker Compose
+> **Repositorio Oficial:** `https://github.com/luisfermrd/cric-comuneros-django.git`
+
+### Opción 1: Todo con Docker Compose (Recomendado)
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/luisfermrd/cric-comuneros-django.git
 cd cric-comuneros-django
 docker-compose up --build
 ```
 
+Servicios levantados:
 - Frontend: http://localhost:8080
-- API: http://localhost:8000/api
-- Swagger: http://localhost:8000/api/docs
-- Admin Django: http://localhost:8000/admin
+- API Backend: http://localhost:8000/api
+- Documentación Swagger: http://localhost:8000/api/docs
+- Admin de Django: http://localhost:8000/admin
 
-### Desarrollo Local
+---
+
+### Opción 2: Desarrollo Local (Consola)
+
+⚠️ **Prerrequisito Backend:** Debes tener PostgreSQL instalado localmente o levantar el contenedor de base de datos (`docker-compose up -d db`).
 
 ```bash
-# Backend
-cd backend
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py seed
-python manage.py runserver
+git clone https://github.com/luisfermrd/cric-comuneros-django.git
+cd cric-comuneros-django
+```
 
-# Frontend
+#### 1. Backend (Django)
+```bash
+cd backend
+
+# 1. Crear y activar entorno virtual (Recomendado)
+python3 -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+# 2. Instalar dependencias
+pip install -r requirements.txt
+
+# 3. Migraciones y Base de Datos
+python manage.py migrate
+
+# 4. Poblar datos por defecto (usuarios, territorios, etc.)
+python manage.py seed
+
+# 5. Levantar el servidor
+python manage.py runserver
+```
+El backend quedará escuchando en `http://localhost:8000`
+
+#### 2. Frontend (React/Vite)
+Abre **otra** pestaña en tu terminal:
+```bash
 cd frontend
+
+# 1. Instalar dependencias de Node
 npm install
+
+# 2. Levantar servidor de desarrollo
 npm run dev
 ```
+El frontend abrirá usualmente en `http://localhost:5173` (Vite).
 
 ## Credenciales
 
@@ -100,7 +133,7 @@ Compatible con servidores que ya tienen nginx corriendo (ServerAvatar, RunCloud,
 
 ```bash
 # Clonar el repo
-git clone <repo-url> /opt/cric-comuneros
+git clone https://github.com/luisfermrd/cric-comuneros-django.git /opt/cric-comuneros
 cd /opt/cric-comuneros
 
 # Crear .env de produccion
