@@ -144,7 +144,7 @@ npm test
 ## Despliegue a Producción (VPS por IP Directa)
 
 Este proyecto está configurado para desplegarse fácilmente en un servidor usando IP. Dado que muchos servidores tienen el puerto 80 ocupado por defecto, el sistema usará los siguientes puertos:
-- **`8080`** (Frontend) -> Aquí entrarás a tu app: `http://TU_IP:8080`
+- **`8888`** (Frontend) -> Aquí entrarás a tu app: `http://TU_IP:8888`
 - **`8000`** (Backend API/Admin)
 
 ### 1. Configurar el servidor
