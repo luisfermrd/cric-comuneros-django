@@ -143,15 +143,17 @@ npm test
 
 ## Despliegue a Producción (VPS por IP Directa)
 
-Este proyecto está configurado para desplegarse fácilmente en un servidor limpio usando IP. Los puertos `80` (Frontend) y `8000` (Backend API/Admin) se exponen automáticamente.
+Este proyecto está configurado para desplegarse fácilmente en un servidor usando IP. Dado que muchos servidores tienen el puerto 80 ocupado por defecto, el sistema usará los siguientes puertos:
+- **`8080`** (Frontend) -> Aquí entrarás a tu app: `http://TU_IP:8080`
+- **`8000`** (Backend API/Admin)
 
 ### 1. Configurar el servidor
 
 ```bash
 # Opcional (el despliegue automático de GitHub Actions hace esto por ti)
 # Pero si quieres levantar a mano:
-git clone https://github.com/luisfermrd/cric-comuneros-django.git /opt/cric-comuneros
-cd /opt/cric-comuneros
+git clone https://github.com/luisfermrd/cric-comuneros-django.git ~/cric-comuneros
+cd ~/cric-comuneros
 
 # Crear .env de produccion
 cp .env.production.example .env
@@ -179,7 +181,7 @@ Para que Django permita las peticiones, debes asignarle tu IP pública a la vari
 
 | Variable | Valor |
 |----------|-------|
-| `DEPLOY_PATH` | `/opt/cric-comuneros` |
+| `DEPLOY_PATH` | `~/cric-comuneros` |
 
 ### 4. Flujo de deploy
 
