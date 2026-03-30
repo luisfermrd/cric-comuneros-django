@@ -1,0 +1,130 @@
+[
+  {
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+      "username": "admin@cric-colombia.org",
+      "email": "admin@cric-colombia.org",
+      "password": "pbkdf2_sha256$870000$salt$hash",
+      "full_name": "Administrador CRIC",
+      "role": "admin",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 2,
+    "fields": {
+      "username": "operador@cric-colombia.org",
+      "email": "operador@cric-colombia.org",
+      "password": "pbkdf2_sha256$870000$salt$hash",
+      "full_name": "Operador CRIC",
+      "role": "operator",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 1,
+    "fields": { "name": "RESGUARDO INDIGENA DE CORINTO", "description": "Municipio de Corinto, pueblo Nasa, zona norte del Cauca" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 2,
+    "fields": { "name": "RESGUARDO INDIGENA DE MIRANDA", "description": "Municipio de Miranda, pueblo Nasa" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 3,
+    "fields": { "name": "RESGUARDO INDIGENA DE SILVIA", "description": "Municipio de Silvia, pueblos Nasa y Misak" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 4,
+    "fields": { "name": "RESGUARDO INDIGENA DE INZA", "description": "Municipio de Inza, pueblo Nasa, zona Tierradentro" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 5,
+    "fields": { "name": "RESGUARDO INDIGENA DE PAEZ", "description": "Municipio de Paez, pueblo Nasa, zona Tierradentro" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 6,
+    "fields": { "name": "CABILDO INDIGENA DE KOKONUKO", "description": "Municipio de Purace, pueblo Kokonuko" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 7,
+    "fields": { "name": "RESGUARDO INDIGENA DE PURACE", "description": "Municipio de Purace, pueblo Coconuco" }
+  },
+  {
+    "model": "territories.territory",
+    "pk": 8,
+    "fields": { "name": "RESGUARDO INDIGENA DE LA VEGA", "description": "Municipio de La Vega, pueblo Yanacona" }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 1,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "1061234567", "first_name": "LUIS", "second_name": "FERNANDO", "first_last_name": "DAGUA", "second_last_name": "TOMBE", "birth_date": "1988-04-12", "sex": "MASCULINO", "phone": "3156789012", "is_active": true, "territory": 1 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 2,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "1067890123", "first_name": "MARLENY", "first_last_name": "PECHENE", "second_last_name": "VELASCO", "birth_date": "1975-11-03", "sex": "FEMENINO", "phone": "3209876543", "is_active": true, "territory": 1 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 3,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "1064567890", "first_name": "EVER", "second_name": "ALIRIO", "first_last_name": "CHOCUE", "second_last_name": "MUSICUE", "birth_date": "1992-07-25", "sex": "MASCULINO", "is_active": true, "territory": 2 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 4,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "2578901234", "first_name": "ROSA", "second_name": "ELENA", "first_last_name": "YATACUE", "second_last_name": "NOSCUE", "birth_date": "1968-02-18", "sex": "FEMENINO", "is_active": true, "territory": 3 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 5,
+    "fields": { "document_type": "TARJETA IDENTIDAD", "document_number": "1069012345", "first_name": "ANDERSON", "first_last_name": "CUCHILLO", "second_last_name": "DAGUA", "birth_date": "2008-09-30", "sex": "MASCULINO", "is_active": true, "territory": 3 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 6,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "3456789012", "first_name": "DORA", "second_name": "INES", "first_last_name": "TENORIO", "second_last_name": "CHOCUE", "birth_date": "1983-06-14", "sex": "FEMENINO", "phone": "3112345678", "is_active": true, "territory": 4 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 7,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "4567890123", "first_name": "HERNAN", "first_last_name": "MUSICUE", "second_last_name": "YATACUE", "birth_date": "1990-01-08", "sex": "MASCULINO", "is_active": true, "territory": 5 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 8,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "5678901234", "first_name": "LUCERO", "first_last_name": "NOSCUE", "second_last_name": "PECHENE", "birth_date": "1995-12-22", "sex": "FEMENINO", "is_active": true, "territory": 5 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 9,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "6789012345", "first_name": "EDILBERTO", "first_last_name": "VELASCO", "second_last_name": "TENORIO", "birth_date": "1970-03-05", "sex": "MASCULINO", "is_active": false, "territory": 6 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 10,
+    "fields": { "document_type": "REGISTRO CIVIL", "document_number": "7890123456", "first_name": "VALENTINA", "first_last_name": "DAGUA", "second_last_name": "NOSCUE", "birth_date": "2019-05-11", "sex": "FEMENINO", "is_active": true, "territory": 7 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 11,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "8901234567", "first_name": "CAMILO", "second_name": "ANDRES", "first_last_name": "TOMBE", "second_last_name": "CUCHILLO", "birth_date": "1985-08-19", "sex": "MASCULINO", "is_active": false, "territory": 8 }
+  },
+  {
+    "model": "comuneros.comunero",
+    "pk": 12,
+    "fields": { "document_type": "CEDULA CIUDADANIA", "document_number": "9012345678", "first_name": "GLORIA", "second_name": "PATRICIA", "first_last_name": "PECHENE", "second_last_name": "MUSICUE", "birth_date": "1978-10-27", "sex": "FEMENINO", "phone": "3178901234", "is_active": true, "territory": 8 }
+  }
+]
